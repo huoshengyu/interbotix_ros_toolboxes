@@ -18,6 +18,7 @@ find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(std_srvs REQUIRED)
 find_package(yaml_cpp_vendor REQUIRED)
+find_package(yaml-cpp REQUIRED)
 
 # Add include directories
 include_directories(
@@ -38,6 +39,7 @@ set(ROS_DEPENDENCIES
 # C++ installation
 add_executable(interbotix_gravity_compensation src/interbotix_gravity_compensation_node.cpp src/interbotix_gravity_compensation.cpp)
 ament_target_dependencies(interbotix_gravity_compensation ${ROS_DEPENDENCIES})
+target_link_libraries(interbotix_gravity_compensation yaml-cpp::yaml-cpp)
 install(
   TARGETS
     interbotix_gravity_compensation

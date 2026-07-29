@@ -40,7 +40,6 @@
 #include "hardware_interface/types/hardware_interface_return_values.hpp"
 #include "hardware_interface/types/lifecycle_state_names.hpp"
 #include "hardware_interface/types/hardware_interface_type_values.hpp"
-#include "hardware_interface/visibility_control.h"
 
 #include "interbotix_xs_msgs/msg/joint_group_command.hpp"
 #include "interbotix_xs_msgs/msg/joint_single_command.hpp"
@@ -85,7 +84,7 @@ public:
 
   /// @brief Returns the name of this hardware interface
   /// @return The name of this hardware interface
-  std::string get_name() const final
+  std::string get_name() const
   {
     return info_.name;
   }
